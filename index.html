@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--
+================================================
+GITHUB PAGES DEPLOYMENT — 3 STEPS
+================================================
+1. Create a new GitHub repo named: bhumanyu-gmf (or any name)
+2. Upload this file as "index.html" to the repo's root
+3. Go to Settings → Pages → Branch: main → Folder: / (root) → Save
+   Your site will be live at: https://[your-username].github.io/bhumanyu-gmf/
+================================================
+-->
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bhumanyu Singh Ranawat — Financial Analyst I, GM Financial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:    #0a0f1e;
+  --navy-2:  #111827;
+  --navy-3:  #1e2d45;
+  --gold:    #c9a84c;
+  --gold-lt: #e8c97a;
+  --cream:   #f5f0e8;
+  --slate:   #94a3b8;
+  --white:   #ffffff;
+  --accent:  #3b82f6;
+  --border:  rgba(201,168,76,0.2);
+  --glow:    rgba(201,168,76,0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--navy);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ---- NAV ---- */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 4rem;
+  background: rgba(10,15,30,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--gold); letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  color: var(--slate); text-decoration: none;
+  font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+
+/* ---- HERO ---- */
+.hero {
+  min-height: 100vh;
+  display: grid; place-items: center;
+  position: relative; overflow: hidden;
+  padding: 8rem 4rem 6rem;
+}
+
+/* Animated grid background */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridPan 20s linear infinite;
+}
+@keyframes gridPan {
+  0%   { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+
+/* Radial glow */
+.hero::after {
+  content: '';
+  position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);
+  width: 60vw; height: 60vh;
+  background: radial-gradient(ellipse at center, rgba(201,168,76,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: 900px; text-align: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: var(--glow);
+  color: var(--gold);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0.4rem 1.2rem; border-radius: 2px;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 600; line-height: 1.15;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s 0.15s ease both;
+}
+.hero h1 em { color: var(--gold); font-style: normal; }
+
+.hero-sub {
+  font-size: 1.05rem; color: var(--slate);
+  max-width: 640px; margin: 0 auto 3rem;
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 0.82rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 2.5rem; border-radius: 2px;
+  transition: all 0.3s;
+  animation: fadeUp 0.8s 0.45s ease both;
+}
+.hero-cta:hover {
+  background: var(--gold-lt);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.25);
+}
+
+.hero-stats {
+  display: flex; justify-content: center; gap: 4rem;
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+  animation: fadeUp 0.8s 0.6s ease both;
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 600;
+  color: var(--gold); line-height: 1;
+}
+.stat-label {
+  font-size: 0.72rem; color: var(--slate);
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-top: 0.3rem;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- SECTION COMMON ---- */
+section { padding: 7rem 4rem; max-width: 1100px; margin: 0 auto; }
+
+.section-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem; letter-spacing: 0.2em;
+  color: var(--gold); text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600; color: var(--cream);
+  line-height: 1.2; margin-bottom: 1.5rem;
+}
+
+.section-divider {
+  width: 60px; height: 1px;
+  background: var(--gold);
+  margin: 1.5rem 0 3rem;
+}
+
+/* ---- COMPANY UNDERSTANDING ---- */
+.company-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+}
+.company-card {
+  background: var(--navy-2);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  transition: border-color 0.3s;
+}
+.company-card:hover { border-color: var(--gold); }
+.company-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; color: var(--gold-lt);
+  margin-bottom: 1rem;
+}
+.company-card p { color: var(--slate); font-size: 0.95rem; line-height: 1.75; }
+.company-card .metric {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem; color: var(--gold);
+  margin-top: 1rem; padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ---- PROBLEMS ---- */
+.problems-section { background: var(--navy-2); margin: 0; max-width: 100%; }
+.problems-inner { max-width: 1100px; margin: 0 auto; padding: 7rem 4rem; }
+
+.problems-list { display: flex; flex-direction: column; gap: 0; }
+.problem-item {
+  display: grid; grid-template-columns: 80px 1fr;
+  align-items: start;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.problem-item:hover .problem-num { color: var(--gold-lt); }
+.problem-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem; font-weight: 600; line-height: 1;
+  color: rgba(201,168,76,0.25);
+  transition: color 0.3s;
+}
+.problem-content h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.05rem; font-weight: 500;
+  color: var(--cream); margin-bottom: 0.5rem;
+}
+.problem-content p { color: var(--slate); font-size: 0.92rem; line-height: 1.75; }
+.problem-tag {
+  display: inline-block; margin-top: 0.7rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem; color: var(--gold);
+  border: 1px solid var(--border); padding: 0.25rem 0.6rem;
+}
+
+/* ---- WHY ME ---- */
+.whyme-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2px;
+}
+.whyme-card {
+  background: var(--navy-2);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  position: relative; overflow: hidden;
+  transition: border-color 0.3s;
+}
+.whyme-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s;
+}
+.whyme-card:hover::before { transform: scaleX(1); }
+.whyme-card:hover { border-color: var(--gold); }
+
+.whyme-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem; font-weight: 600; color: var(--gold);
+  line-height: 1; margin-bottom: 0.5rem;
+}
+.whyme-label {
+  font-size: 0.78rem; letter-spacing: 0.1em;
+  color: var(--gold); text-transform: uppercase;
+  margin-bottom: 1rem; font-weight: 500;
+}
+.whyme-card p { color: var(--slate); font-size: 0.9rem; line-height: 1.7; }
+
+/* ---- 30-60-90 ---- */
+.plan-section { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-3) 100%); max-width: 100%; margin: 0; }
+.plan-inner { max-width: 1100px; margin: 0 auto; padding: 7rem 4rem; }
+
+.plan-phases {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; margin-top: 3rem;
+}
+.phase-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  padding: 3rem 2.5rem;
+  position: relative;
+}
+.phase-card:nth-child(2) { border-top: 2px solid var(--gold); }
+.phase-header {
+  display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;
+}
+.phase-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--gold); flex-shrink: 0;
+}
+.phase-period {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem; color: var(--gold);
+  letter-spacing: 0.1em;
+}
+.phase-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; color: var(--cream);
+  margin-bottom: 1.5rem;
+}
+.phase-items { list-style: none; }
+.phase-items li {
+  color: var(--slate); font-size: 0.88rem; line-height: 1.7;
+  padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+  display: flex; gap: 0.75rem;
+}
+.phase-items li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
+.phase-outcome {
+  margin-top: 2rem; padding: 1.2rem;
+  background: var(--glow); border: 1px solid var(--border);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem; color: var(--gold-lt);
+}
+
+/* ---- PROJECTS ---- */
+.projects-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2px;
+}
+.project-card {
+  background: var(--navy-2);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  transition: all 0.3s;
+}
+.project-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+.project-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1rem;
+  display: block;
+}
+.project-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; color: var(--cream);
+  margin-bottom: 1.5rem; line-height: 1.3;
+}
+.project-row { margin-bottom: 1rem; }
+.project-row-label {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+.project-row p { color: var(--slate); font-size: 0.88rem; line-height: 1.65; }
+
+/* ---- CTA ---- */
+.cta-section {
+  text-align: center; padding: 8rem 4rem;
+  background: var(--navy); position: relative; max-width: 100%;
+  border-top: 1px solid var(--border);
+}
+.cta-section::before {
+  content: '';
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 500px; height: 400px;
+  background: radial-gradient(ellipse at top, rgba(201,168,76,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.cta-inner .section-title { margin-bottom: 1rem; }
+.cta-inner p { color: var(--slate); margin-bottom: 3rem; font-size: 1.05rem; }
+.cta-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-block;
+  background: var(--gold); color: var(--navy);
+  font-size: 0.82rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  text-decoration: none; padding: 1rem 2.5rem;
+  border-radius: 2px; transition: all 0.3s;
+}
+.btn-primary:hover {
+  background: var(--gold-lt);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+}
+.btn-ghost {
+  display: inline-block;
+  border: 1px solid var(--border); color: var(--cream);
+  font-size: 0.82rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  text-decoration: none; padding: 1rem 2.5rem;
+  border-radius: 2px; transition: all 0.3s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+.contact-strip {
+  display: flex; justify-content: center; gap: 3rem;
+  margin-top: 4rem; padding-top: 3rem;
+  border-top: 1px solid var(--border);
+}
+.contact-item { text-align: center; }
+.contact-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem; color: var(--slate);
+  text-transform: uppercase; letter-spacing: 0.12em;
+  margin-bottom: 0.4rem;
+}
+.contact-value { font-size: 0.9rem; color: var(--cream); }
+.contact-value a { color: var(--gold); text-decoration: none; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  nav { padding: 1rem 2rem; }
+  .nav-links { gap: 1.5rem; }
+  section { padding: 5rem 2rem; }
+  .hero { padding: 7rem 2rem 5rem; }
+  .company-grid { grid-template-columns: 1fr; }
+  .plan-phases { grid-template-columns: 1fr; }
+  .hero-stats { gap: 2rem; flex-wrap: wrap; }
+  .cta-section { padding: 5rem 2rem; }
+  .contact-strip { flex-direction: column; gap: 1.5rem; }
+  .problems-inner { padding: 5rem 2rem; }
+  .plan-inner { padding: 5rem 2rem; }
+  .problem-item { grid-template-columns: 60px 1fr; }
+  .problem-num { font-size: 2.5rem; }
+}
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .hero h1 { font-size: 2.1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">BSR · GM Financial</div>
+  <ul class="nav-links">
+    <li><a href="#understanding">Company</a></li>
+    <li><a href="#problems">Problems I'll Solve</a></li>
+    <li><a href="#why-me">Why Me</a></li>
+    <li><a href="#plan">30-60-90</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Financial Analyst I · Forecast & Planning · GM Financial</div>
+    <h1>How <em>Bhumanyu Singh Ranawat</em> Will Sharpen Forecast Accuracy and Drive Planning Precision for GM Financial</h1>
+    <p class="hero-sub">
+      Financial analyst with proven impact in FP&A, variance analysis, and data-driven reporting — with the exact tools GM Financial's team uses every day.
+    </p>
+    <a href="#plan" class="hero-cta">See My 30-60-90 Day Plan ↓</a>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">12%</div>
+        <div class="stat-label">Forecast Accuracy Gain</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">$15K+</div>
+        <div class="stat-label">Cost Savings Identified</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">390K+</div>
+        <div class="stat-label">Portfolio Records Analyzed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4.0</div>
+        <div class="stat-label">MS Analytics GPA</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPANY UNDERSTANDING -->
+<section id="understanding">
+  <div class="section-tag">Phase 01 — Company Understanding</div>
+  <h2 class="section-title">I Know What GM Financial Is Building</h2>
+  <div class="section-divider"></div>
+
+  <div class="company-grid">
+    <div class="company-card">
+      <h3>What GM Financial Actually Does</h3>
+      <p>GM Financial is GM's wholly-owned captive finance subsidiary — the financial engine behind every retail loan, lease, and dealer floor plan tied to GM vehicle sales. They connect 40–45% of GM's U.S. retail customers to vehicles through data-driven lending and securitization, generating over $2.1B in net income in 2025.</p>
+      <div class="metric">FY2025 Net Income: $2.1B ↑ from $1.9B in 2024</div>
+    </div>
+    <div class="company-card">
+      <h3>Their Strategic Priority Right Now</h3>
+      <p>With GM parent realigning its EV portfolio and targeting $10–12B in capex for 2026, GM Financial must forecast interest expense scenarios, securitization models, and liquidity positions with sharper precision. The Forecast & Planning team is literally where financial clarity meets corporate strategy.</p>
+      <div class="metric">2026 GMF EBT-adjusted target: $2.5–3.0B range</div>
+    </div>
+    <div class="company-card">
+      <h3>Competitive Context</h3>
+      <p>GM Financial competes with Ford Motor Credit, Toyota Financial Services, and Hyundai Capital. Their advantage is deep captive integration — GM retail penetration data feeds directly into their underwriting and forecasting models. Accurate FP&A is the moat that keeps their cost of capital low and execution tight.</p>
+      <div class="metric">U.S. Retail Loan Share Target: 40–45%</div>
+    </div>
+    <div class="company-card">
+      <h3>Why the Forecast & Planning Team Is Critical</h3>
+      <p>GM Financial's securitization, warehouse, debt, and income models run on this team's output. As GM navigates a post-EV incentive policy environment and plans a record $6B share repurchase, the FP&A team's interest expense scenarios and variance analyses are scrutinized at board level.</p>
+      <div class="metric">Board-level reporting: $6B buyback + dividend at $0.18/share</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<div class="problems-section" id="problems">
+  <div class="problems-inner">
+    <div class="section-tag">Phase 02 — Problems I'll Solve</div>
+    <h2 class="section-title">5 Business Problems I Can Solve for GM Financial</h2>
+    <div class="section-divider"></div>
+
+    <div class="problems-list">
+      <div class="problem-item">
+        <div class="problem-num">01</div>
+        <div class="problem-content">
+          <h3>Financial Models That Drift Without Rigorous Variance Monitoring</h3>
+          <p>Securitization, warehouse, and income models accumulate forecast error when actuals aren't systematically compared to predictions each cycle. I built variance analysis frameworks tracking $1M+ vendor payments at Macleods Pharmaceuticals — identifying $15K+ in cost-saving opportunities through structured budget-vs-actuals reconciliation. I'll apply the same discipline to GMF's existing model suite.</p>
+          <span class="problem-tag">→ Variance Analysis · Budget vs. Actuals · Model Monitoring</span>
+        </div>
+      </div>
+
+      <div class="problem-item">
+        <div class="problem-num">02</div>
+        <div class="problem-content">
+          <h3>Interest Expense Scenarios That Are Time-Intensive to Rebuild Each Month</h3>
+          <p>Building monthly interest expense for disclosure requires scenario logic layered on top of debt and liquidity models. At Macleods, I automated monthly close reconciliation using Excel VBA and Power Query, cutting the cycle by 3 days and improving accuracy by 20%. I'll apply the same automation thinking to interest expense scenario generation at GMF.</p>
+          <span class="problem-tag">→ Excel VBA · Power Query · Scenario Modeling</span>
+        </div>
+      </div>
+
+      <div class="problem-item">
+        <div class="problem-num">03</div>
+        <div class="problem-content">
+          <h3>Management Reports That Don't Tell a Clear Story</h3>
+          <p>Financial reports only add value when leadership can act on them quickly. At DNS Hospitals and Morningstar, I built Power BI dashboards tracking 15+ KPIs that enabled governance committees to identify classification issues and cost drivers at a glance. At GMF I'll turn monthly/quarterly financials into decision-ready narratives, not just data tables.</p>
+          <span class="problem-tag">→ Power BI · Management Reporting · KPI Design</span>
+        </div>
+      </div>
+
+      <div class="problem-item">
+        <div class="problem-num">04</div>
+        <div class="problem-content">
+          <h3>Forecasting Models That Don't Flex With Macro Changes</h3>
+          <p>With GM's EV policy environment shifting in 2025–26 and tariff pressure on auto demand, static forecasting models break fast. At DNS Hospitals I built dynamic revenue and cash flow models in Advanced Excel that improved forecast accuracy by 12% by incorporating scenario assumptions and sensitivity toggles. GMF's income and liquidity models need that same adaptability.</p>
+          <span class="problem-tag">→ Dynamic Forecasting · Scenario Analysis · Sensitivity Modeling</span>
+        </div>
+      </div>
+
+      <div class="problem-item">
+        <div class="problem-num">05</div>
+        <div class="problem-content">
+          <h3>Data Quality Issues That Undermine Downstream Financial Reporting</h3>
+          <p>Forecasting is only as good as the data underneath it. At Morningstar I analyzed 390K+ investment portfolio records using SQL, Python, and SAS — improving data quality by 35% and reducing downstream analysis time by 40%. GMF's financial models run on clean data pipelines; I'll help protect that integrity using the exact tools they already rely on.</p>
+          <span class="problem-tag">→ SQL · SAS · Oracle Financial · Data Quality</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY ME -->
+<section id="why-me">
+  <div class="section-tag">Phase 03 — Why Me, Data-Backed</div>
+  <h2 class="section-title">What I've Already Proven, Tied to What GMF Needs</h2>
+  <div class="section-divider"></div>
+
+  <div class="whyme-grid">
+    <div class="whyme-card">
+      <div class="whyme-number">12%</div>
+      <div class="whyme-label">Forecast Accuracy Improvement</div>
+      <p>Rebuilt revenue and cash flow forecasting models at DNS Hospitals using Advanced Excel. GMF needs analysts who can make existing forecasting models more reliable — not just run them.</p>
+    </div>
+    <div class="whyme-card">
+      <div class="whyme-number">3 Days</div>
+      <div class="whyme-label">Month-End Close Cycle Reduced</div>
+      <p>Automated reconciliation using VBA and Power Query at Macleods Pharmaceuticals. Monthly reporting at GMF requires exactly this kind of cycle-time discipline in Excel — their core tool.</p>
+    </div>
+    <div class="whyme-card">
+      <div class="whyme-number">35%</div>
+      <div class="whyme-label">Data Quality Gain</div>
+      <p>Improved investment data quality across 390K+ records at Morningstar using SQL, Python, and SAS — the same tools GMF's analysts use daily for data mining and financial reporting.</p>
+    </div>
+    <div class="whyme-card">
+      <div class="whyme-number">$15K+</div>
+      <div class="whyme-label">Cost Savings Identified</div>
+      <p>Through budget-vs-actuals variance analysis on $1M+ vendor payments. Variance analysis and spend trend identification are core weekly tasks in GMF's Forecast & Planning function.</p>
+    </div>
+    <div class="whyme-card">
+      <div class="whyme-number">Oracle</div>
+      <div class="whyme-label">Financial Analysis Software</div>
+      <p>Used Oracle Financial Analysis Software at Macleods — GMF specifically lists Oracle as a preferred skill. Day one tool familiarity, zero ramp time on reporting infrastructure.</p>
+    </div>
+    <div class="whyme-card">
+      <div class="whyme-number">4.0</div>
+      <div class="whyme-label">MS Business Analytics GPA</div>
+      <p>DePaul University, coursework in Financial Accounting, Internal Auditing, Data Visualization, and Database Management. CMA Part 1 in progress — building the finance credentials that grow with the role.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 30-60-90 DAY PLAN -->
+<div class="plan-section" id="plan">
+  <div class="plan-inner">
+    <div class="section-tag">Phase 04 — My Commitment</div>
+    <h2 class="section-title">30-60-90 Day Plan for GM Financial</h2>
+    <div class="section-divider"></div>
+
+    <div class="plan-phases">
+      <div class="phase-card">
+        <div class="phase-header">
+          <div class="phase-dot"></div>
+          <div class="phase-period">Days 01–30</div>
+        </div>
+        <h3>Learn, Map, and Build Context</h3>
+        <ul class="phase-items">
+          <li>Audit all existing financial models: securitization, warehouse, liquidity, debt, and income — document logic flows and known gaps</li>
+          <li>Shadow every monthly reporting cycle: observe data sources, Oracle inputs, and Excel macro structures</li>
+          <li>Meet all cross-functional stakeholders (Treasury, Accounting, Risk) to understand their reporting dependencies</li>
+          <li>Map the interest expense scenario build process end-to-end and identify where manual steps can be automated</li>
+          <li>Study GMF's 2025 earnings materials and recent securitization disclosures to understand the narrative behind each model</li>
+        </ul>
+        <div class="phase-outcome">Tools: Oracle Financial, Advanced Excel, SAS, internal data warehouse</div>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-header">
+          <div class="phase-dot"></div>
+          <div class="phase-period">Days 31–60</div>
+        </div>
+        <h3>Deliver First Outputs, Own a Model</h3>
+        <ul class="phase-items">
+          <li>Take ownership of one financial model — build model documentation, add scenario toggle layers, and reduce manual inputs</li>
+          <li>Produce first variance analysis report independently: budget vs. actuals across assigned cost center with actionable findings</li>
+          <li>Rebuild one monthly management report using Power BI or Excel pivot framework to improve clarity for leadership</li>
+          <li>Present first interest expense scenario independently to the team for review and feedback</li>
+          <li>Complete SQL or SAS data query to validate data inputs feeding into an existing model — catch at least one discrepancy</li>
+        </ul>
+        <div class="phase-outcome">Tools: Excel VBA + Power Query, Power BI DAX, SQL, SAS</div>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-header">
+          <div class="phase-dot"></div>
+          <div class="phase-period">Days 61–90</div>
+        </div>
+        <h3>Measurable Impact and Proactive Contribution</h3>
+        <ul class="phase-items">
+          <li>Measurable goal: reduce one reporting cycle step by at least 20% through automation or process improvement</li>
+          <li>Deliver a clean variance analysis deck that management can present to leadership without edits</li>
+          <li>Propose one forecast model improvement based on trend analysis — documented with before/after accuracy comparison</li>
+          <li>Build a reusable Excel or Oracle template that reduces quarterly scenario build time for the team</li>
+          <li>Present a mini analysis to the manager: one data-driven insight about interest cost trends or model performance</li>
+        </ul>
+        <div class="phase-outcome">Target: ≥1 measurable forecast accuracy or efficiency improvement documented</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-tag">Phase 05 — Relevant Project Showcase</div>
+  <h2 class="section-title">Work That Mirrors GMF's Problems</h2>
+  <div class="section-divider"></div>
+
+  <div class="projects-grid">
+    <div class="project-card">
+      <span class="project-tag">Macleods Pharmaceuticals · FP&A Operations</span>
+      <h3>Automating Month-End Close & Variance Analysis on $1M+ Vendor Payments</h3>
+      <div class="project-row">
+        <div class="project-row-label">The Problem</div>
+        <p>Monthly close cycle was long and error-prone. Budget vs. actuals comparison on vendor payments was manual, slowing down reporting and hiding cost inefficiencies.</p>
+      </div>
+      <div class="project-row">
+        <div class="project-row-label">My Approach</div>
+        <p>Built Excel Power Query and VBA automation for reconciliation. Ran structured variance analysis segmented by vendor, category, and time period. Used Oracle Financial Analysis Software for dashboard reporting.</p>
+      </div>
+      <div class="project-row">
+        <div class="project-row-label">The Result</div>
+        <p>Month-end cycle reduced by 3 days. Reconciliation accuracy improved 20%. Identified $15K+ in cost-saving opportunities through spend trend analysis. Forecasting accuracy improved 18% via Power BI dashboards.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Morningstar Inc. · Investment Data Analytics</span>
+      <h3>Improving Data Quality Across 390K+ Investment Portfolio Records</h3>
+      <div class="project-row">
+        <div class="project-row-label">The Problem</div>
+        <p>Downstream financial analysis and compliance reporting was unreliable due to data quality gaps across hundreds of thousands of investment portfolio records.</p>
+      </div>
+      <div class="project-row">
+        <div class="project-row-label">My Approach</div>
+        <p>Built SQL and Python (pandas) validation scripts to flag classification errors, missing fields, and outliers. Integrated Snowflake cloud data with Power BI dashboards tracking 15+ KPI metrics for governance committees.</p>
+      </div>
+      <div class="project-row">
+        <div class="project-row-label">The Result</div>
+        <p>Data quality improved 35%. Downstream analysis time cut by 40%. AI-assisted script development (Copilot, ChatGPT) reduced manual review effort by 30% while maintaining governance compliance.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">DNS Hospitals · Healthcare Finance Operations</span>
+      <h3>Building Dynamic Revenue & Cash Flow Forecasting Models</h3>
+      <div class="project-row">
+        <div class="project-row-label">The Problem</div>
+        <p>The finance team lacked reliable forward-looking models for revenue and cash flow. Capacity planning and breakeven analysis depended on static, non-scenario-aware spreadsheets.</p>
+      </div>
+      <div class="project-row">
+        <div class="project-row-label">My Approach</div>
+        <p>Developed multi-scenario revenue and cash flow models in Advanced Excel with driver-based inputs. Added AR aging and AP cycle monitoring to working capital analysis. Designed KPI dashboards for leadership to track revenue, collection rates, and operational efficiency.</p>
+      </div>
+      <div class="project-row">
+        <div class="project-row-label">The Result</div>
+        <p>Forecast accuracy improved 12%. DSO reduced by 15% through working capital improvements. Leadership now had data-backed inputs for pricing decisions and resource allocation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="section-tag">Let's Talk</div>
+    <h2 class="section-title">Let's discuss what I can build for GM Financial in week one.</h2>
+    <p>I've already studied your models, your reporting cycle, and your strategic priorities. I'm ready to add value from day one — not month three.</p>
+    <div class="cta-buttons">
+      <a href="mailto:bhumanyu.singh007@gmail.com" class="btn-primary">Email Me Directly</a>
+      <a href="https://www.linkedin.com/in/bhumanyu-singh-ranawat" target="_blank" class="btn-ghost">LinkedIn Profile →</a>
+      <a href="#" class="btn-ghost">Download Resume ↓</a>
+    </div>
+
+    <div class="contact-strip">
+      <div class="contact-item">
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:bhumanyu.singh007@gmail.com">bhumanyu.singh007@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Phone</div>
+        <div class="contact-value">+1 (312) 825-6414</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Location</div>
+        <div class="contact-value">Chicago, IL (open to Fort Worth)</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Education</div>
+        <div class="contact-value">MS Business Analytics · DePaul University · 4.0 GPA</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
