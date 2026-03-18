@@ -37,7 +37,7 @@ GITHUB PAGES DEPLOYMENT — 3 STEPS
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { }
 
 body {
   background: var(--navy);
@@ -53,8 +53,7 @@ nav {
   position: fixed; top: 0; width: 100%; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.2rem 4rem;
-  background: rgba(10,15,30,0.85);
-  backdrop-filter: blur(16px);
+  background: rgba(10,15,30,0.95);
   border-bottom: 1px solid var(--border);
 }
 .nav-logo {
@@ -79,7 +78,7 @@ nav {
   padding: 8rem 4rem 6rem;
 }
 
-/* Animated grid background */
+/* Static grid background (animation removed for performance) */
 .hero::before {
   content: '';
   position: absolute; inset: 0;
@@ -87,11 +86,6 @@ nav {
     linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
   background-size: 60px 60px;
-  animation: gridPan 20s linear infinite;
-}
-@keyframes gridPan {
-  0%   { background-position: 0 0; }
-  100% { background-position: 60px 60px; }
 }
 
 /* Radial glow */
@@ -144,13 +138,13 @@ nav {
   letter-spacing: 0.12em; text-transform: uppercase;
   text-decoration: none;
   padding: 1rem 2.5rem; border-radius: 2px;
-  transition: all 0.3s;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
   animation: fadeUp 0.8s 0.45s ease both;
 }
 .hero-cta:hover {
   background: var(--gold-lt);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(201,168,76,0.25);
+  box-shadow: 0 4px 16px rgba(201,168,76,0.2);
 }
 
 .hero-stats {
@@ -234,7 +228,6 @@ section { padding: 7rem 4rem; max-width: 1100px; margin: 0 auto; }
   align-items: start;
   padding: 2.5rem 0;
   border-bottom: 1px solid var(--border);
-  transition: all 0.3s;
 }
 .problem-item:hover .problem-num { color: var(--gold-lt); }
 .problem-num {
@@ -344,7 +337,7 @@ section { padding: 7rem 4rem; max-width: 1100px; margin: 0 auto; }
   background: var(--navy-2);
   border: 1px solid var(--border);
   padding: 2.5rem;
-  transition: all 0.3s;
+  transition: border-color 0.3s, transform 0.3s;
 }
 .project-card:hover { border-color: var(--gold); transform: translateY(-4px); }
 .project-tag {
@@ -389,11 +382,11 @@ section { padding: 7rem 4rem; max-width: 1100px; margin: 0 auto; }
   font-size: 0.82rem; font-weight: 500;
   letter-spacing: 0.1em; text-transform: uppercase;
   text-decoration: none; padding: 1rem 2.5rem;
-  border-radius: 2px; transition: all 0.3s;
+  border-radius: 2px; transition: background 0.3s, box-shadow 0.3s;
 }
 .btn-primary:hover {
   background: var(--gold-lt);
-  box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+  box-shadow: 0 4px 16px rgba(201,168,76,0.25);
 }
 .btn-ghost {
   display: inline-block;
@@ -401,7 +394,7 @@ section { padding: 7rem 4rem; max-width: 1100px; margin: 0 auto; }
   font-size: 0.82rem; font-weight: 500;
   letter-spacing: 0.1em; text-transform: uppercase;
   text-decoration: none; padding: 1rem 2.5rem;
-  border-radius: 2px; transition: all 0.3s;
+  border-radius: 2px; transition: border-color 0.3s, color 0.3s;
 }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
 
